@@ -1,5 +1,5 @@
 class socialmedia:
-    def _init_(self, page):
+    def __init__(self, page):
         self.page=page
         self.about=page.locator('(//a[@href="https://www.tranktechnologies.com/about"])[1]')
         self.facebook=page.locator('//a[@href="https://www.facebook.com/TrankTechnologies"]')
@@ -9,7 +9,6 @@ class socialmedia:
         self.twitter=page.locator('//a[@href="https://twitter.com/tranktechno"]')
         self.youtube=page.locator('//a[@href="https://www.youtube.com/channel/UCWu1Y-tfrXf-Utpaft830Cg"]')
         self.quora=page.locator('//a[@href="https://www.quora.com/profile/Trank-Technologies-1"]')
-
 
     def socialmediapageclick(self):
         self.about.click()

@@ -30,7 +30,7 @@ class contact_us:
         # "Choose a Service" Dropdown & Options
         # Options: "Web Development", "App Development", "UI / UX Design",
         #          "Graphic Design", "Digital Marketing", "Business Listing", "Others"
-        #self.choose_service = page.locator('(//select[@name="service"])')
+        self.choose_service = page.locator('(//select[@name="service"])[2]')
         # self.choose_service = page.locator('(//select[option[contains(text(), "Choose a Service")]])[2]')
 
         self.your_message = page.locator('(//textarea[@placeholder="Your Message"])[2]')
@@ -40,7 +40,7 @@ class contact_us:
         # self.submit_btn = page.locator('(//button[@type="submit"])[2]')
 
     def free_consultation_form_filling(
-        self, name, email, phone, otp, company, service, message
+        self, name, email, phone, otp, company, message
     ):
         self.contact_us_link.click()
         self.page.wait_for_load_state("load")
@@ -50,7 +50,7 @@ class contact_us:
         self.send_otp.click()
         self.enter_otp.fill(otp)
         self.your_company.fill(company)
-        self.choose_service.select_option(label=service)
+        self.choose_service.select_option(label="Web Development")
         self.your_message.fill(message)
         self.submit_btn.click()
         self.page.wait_for_load_state("load")
